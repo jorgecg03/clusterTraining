@@ -64,10 +64,15 @@ spec:
                 }
             }
         }
-        post {
-            always {
+    }
+    
+
+    post {
+        always {
+            container('docker') {
                 sh 'docker compose down'
             }
         }
     }
 }
+
