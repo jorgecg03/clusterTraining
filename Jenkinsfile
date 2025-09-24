@@ -50,8 +50,11 @@ spec:
         }
         stage('Run tests') {
             
+            
             steps {
                 container('docker') {
+                    sh 'apk add --no-cache python3 py3-pip'
+                    sh 'pip install pytest'
                     sh 'pytest ./tests/test_sample.py'
                 }
             }
