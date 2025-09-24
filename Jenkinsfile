@@ -35,6 +35,8 @@ spec:
             steps {
                 container('docker') {
                     sh 'docker compose build'
+                    sh 'docker ps'
+                    sh 'docker images'
                 }
             }
         }
